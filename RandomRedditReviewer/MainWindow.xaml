@@ -1,0 +1,89 @@
+﻿<controls:MetroWindow x:Class="Wcj.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:wcj="clr-namespace:Wcj;assembly=SubRedditViewModel"
+                      xmlns:valueConverters="clr-namespace:Wcj.ValueConverters"
+                      mc:Ignorable="d"
+                      Title="Random Reddit Reviewer" Height="400" Width="600"
+                      BorderThickness="0"
+                      GlowBrush="Black"
+                      ResizeMode="CanResizeWithGrip"
+                      WindowTransitionsEnabled="False"
+                      WindowStartupLocation="CenterScreen"
+                      ShowIconOnTitleBar="True"
+                      Icon="Resources/Reddit.ico">
+    <Window.DataContext>
+        <wcj:SubRedditViewModel />
+    </Window.DataContext>
+    <controls:MetroWindow.Resources>
+        <valueConverters:MaxSubRedditsToStringConverter x:Key="MaxSubRedditsConverter" />
+        <valueConverters:IntToVisibilityConverter x:Key="IntToVisibilityConverter" />
+        <valueConverters:NsfwOptionsToStringConverter x:Key="NsfwOptionsToStringConverter" />
+    </controls:MetroWindow.Resources>
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top" Style="{StaticResource {x:Type Menu}}">
+
+            <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="Help">
+                <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="Instructions" />
+                <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="About" />
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom" Style="{StaticResource {x:Type StatusBar}}">
+            <StatusBarItem Style="{StaticResource {x:Type StatusBarItem}}">
+                <TextBlock Text="{Binding Status}" Margin="5,0,0,5" />
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right" Style="{StaticResource {x:Type StatusBarItem}}">
+                <controls:MetroProgressBar Style="{StaticResource {x:Type ProgressBar}}" Minimum="0"
+                                           Maximum="{Binding SubRedditsToGet}" Value="{Binding SubRedditCount}"
+                                           Visibility="{Binding SubRedditCount, Converter={StaticResource IntToVisibilityConverter}}"
+                                           Width="200" Margin="5,0,15,5" />
+            </StatusBarItem>
+        </StatusBar>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding MaxSubReddits, Converter={StaticResource MaxSubRedditsConverter}}"
+                       VerticalAlignment="Center" Margin="5,0,0,0" />
+            <controls:NumericUpDown Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                    ButtonsAlignment="Right" Value="{Binding SubRedditsToGet}"
+                                    InterceptArrowKeys="True" InterceptManualEnter="True" InterceptMouseWheel="True"
+                                    Interval="1" Maximum="{Binding MaxSubReddits}" Minimum="1" Width="75"
+                                    Margin="5,0,0,0"
+                                    BorderThickness="0" />
+            <ComboBox Grid.Row="0" Grid.Column="2" Width="120"
+                      ItemsSource="{Binding NsfwOptions}"
+                      SelectedItem="{Binding NsfwPreference}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource NsfwOptionsToStringConverter}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Grid.Row="0" Grid.Column="3" Content="Get SubReddits" Command="{Binding GetSubRedditsCommand}"
+                    Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Right" Margin="5" />
+            <ListBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" ItemsSource="{Binding SubReddits}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <Hyperlink NavigateUri="{Binding Hyperlink}" Command="{Binding NavigateToSubRedditCommand}">
+                                <TextBlock Text="{Binding Name}" />
+                            </Hyperlink>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </DockPanel>
+</controls:MetroWindow>
