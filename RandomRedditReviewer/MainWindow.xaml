@@ -7,7 +7,7 @@
                       xmlns:wcj="clr-namespace:Wcj;assembly=SubRedditViewModel"
                       xmlns:valueConverters="clr-namespace:Wcj.ValueConverters"
                       mc:Ignorable="d"
-                      Title="Random Reddit Reviewer" Height="400" Width="600"
+                      Title="Random Reddit Reviewer" Height="400" Width="720"
                       BorderThickness="0"
                       GlowBrush="Black"
                       ResizeMode="CanResizeWithGrip"
@@ -51,28 +51,31 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding MaxSubReddits, Converter={StaticResource MaxSubRedditsConverter}}"
-                       VerticalAlignment="Center" Margin="5,0,0,0" />
+                       VerticalAlignment="Center" Margin="5,0,5,0" />
             <controls:NumericUpDown Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"
                                     ButtonsAlignment="Right" Value="{Binding SubRedditsToGet}"
                                     InterceptArrowKeys="True" InterceptManualEnter="True" InterceptMouseWheel="True"
                                     Interval="1" Maximum="{Binding MaxSubReddits}" Minimum="1" Width="75"
-                                    Margin="5,0,0,0"
+                                    Margin="5,0,5,0"
                                     BorderThickness="0" />
-            <ComboBox Grid.Row="0" Grid.Column="2" Width="120"
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Include NSFW?" VerticalAlignment="Center"
+                       HorizontalAlignment="Right" Margin="5,0,5,0" />
+            <ComboBox Grid.Row="0" Grid.Column="3" Width="110" HorizontalAlignment="Right"
                       ItemsSource="{Binding NsfwOptions}"
-                      SelectedItem="{Binding NsfwPreference}">
+                      SelectedItem="{Binding NsfwPreference}" Margin="5,0,5,0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Converter={StaticResource NsfwOptionsToStringConverter}}" />
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Grid.Row="0" Grid.Column="3" Content="Get SubReddits" Command="{Binding GetSubRedditsCommand}"
-                    Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Right" Margin="5" />
+            <Button Grid.Row="0" Grid.Column="4" Content="Get SubReddits" Command="{Binding GetSubRedditsCommand}"
+                    Style="{StaticResource AccentedSquareButtonStyle}" Margin="5" HorizontalAlignment="Right" />
             <ListBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" ItemsSource="{Binding SubReddits}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
