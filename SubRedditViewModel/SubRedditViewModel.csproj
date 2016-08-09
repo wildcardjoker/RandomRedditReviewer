@@ -68,7 +68,6 @@
     <Compile Include="Methods.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="SubRedditJsonModel.cs" />
     <Compile Include="SubRedditViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
