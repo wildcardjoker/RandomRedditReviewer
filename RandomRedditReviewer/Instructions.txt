@@ -23,3 +23,5 @@ Credits
 * Code modified using suggestions from [Resharper](https://www.jetbrains.com/resharper/)
 * Thanks to [StackOverflow](https://www.stackoverflow.com) for an excellent code Q&A forum.
 * Application themed using [MahApps](http://mahapps.com/)
+* Enum to Human-readable Description using [Humanizer](https://github.com/Humanizr/Humanizer)
+* Data Binding support via [MVVM Light](http://www.mvvmlight.net/)
