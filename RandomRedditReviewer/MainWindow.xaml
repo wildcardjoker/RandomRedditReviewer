@@ -27,8 +27,8 @@
         <Menu DockPanel.Dock="Top" Style="{StaticResource {x:Type Menu}}">
 
             <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="Help">
-                <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="Instructions" />
-                <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="About" />
+                <MenuItem Style="{StaticResource {x:Type MenuItem}}" Header="Instructions and Credits"
+                          Command="{Binding ShowInstructionsCommand}" />
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Style="{StaticResource {x:Type StatusBar}}">
