@@ -2,7 +2,7 @@
 
 // RandomRedditReviewer: SubRedditViewModel
 // Created: 2016-07-31
-// Modified: 2016-08-06 9:28 PM
+// Modified: 2016-08-12 9:26 PM
 #endregion
 
 #region Using Directives
@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using GalaSoft.MvvmLight.CommandWpf;
 
 #endregion
 
@@ -46,8 +45,7 @@ namespace Wcj
         #region  Fields
         private const string RandomSfw = "https://www.reddit.com/r/random";
         private const string RandomNsfw = "http://www.reddit.com/r/randnsfw";
-        private static readonly Random _random = new Random();
-        private RelayCommand _getSubRedditsCommand;
+        private static readonly Random RandomGenerator = new Random();
         private NsfwPreference _nsfwPreference;
         private string _status;
         private int _subRedditCount;

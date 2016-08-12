@@ -2,13 +2,15 @@
 
 // RandomRedditReviewer: SubRedditViewModel
 // Created: 2016-07-31
-// Modified: 2016-08-12 8:18 PM
+// Modified: 2016-08-12 9:20 PM
 #endregion
 
 #region Using Directives
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 
 #endregion
@@ -86,6 +88,15 @@ namespace Wcj
                 Debug.WriteLine(Status);
             }
             SubRedditCount = 0;
+        }
+
+        /// <summary>
+        ///     Launch the instructions and credits.
+        /// </summary>
+        private static void ShowInstructions()
+        {
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "instructions.txt");
+            Process.Start(path);
         }
     }
 }
