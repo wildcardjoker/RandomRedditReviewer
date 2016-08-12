@@ -2,7 +2,7 @@
 
 // RandomRedditReviewer: SubRedditViewModel
 // Created: 2016-07-31
-// Modified: 2016-08-12 9:20 PM
+// Modified: 2016-08-12 9:47 PM
 #endregion
 
 #region Using Directives
@@ -39,7 +39,7 @@ namespace Wcj
                 switch (NsfwPreference)
                 {
                     case NsfwPreference.Include:
-                        uri = _random.Next() % 2 == 0 ? RandomNsfw : RandomSfw;
+                        uri = RandomGenerator.Next() % 2 == 0 ? RandomNsfw : RandomSfw;
                         break;
                     case NsfwPreference.NsfwOnly:
                         uri = RandomNsfw;
