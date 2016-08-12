@@ -2,7 +2,7 @@
 
 // RandomRedditReviewer: SubRedditViewModel
 // Created: 2016-07-31
-// Modified: 2016-08-06 9:05 PM
+// Modified: 2016-08-12 8:18 PM
 #endregion
 
 #region Using Directives
@@ -85,6 +85,7 @@ namespace Wcj
                 Status = $"{SubRedditCount} subreddits collected.";
                 Debug.WriteLine(Status);
             }
+            SubRedditCount = 0;
         }
     }
 }
