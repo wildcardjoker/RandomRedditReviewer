@@ -2,13 +2,14 @@
 
 // RandomRedditReviewer: SubRedditViewModel
 // Created: 2016-07-31
-// Modified: 2016-08-12 9:47 PM
+// Modified: 2016-08-13 7:49 PM
 #endregion
 
 #region Using Directives
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -35,6 +36,7 @@ namespace Wcj
             }
             try
             {
+                SubReddit subReddit;
                 string uri;
                 switch (NsfwPreference)
                 {
@@ -56,9 +58,18 @@ namespace Wcj
                 {
                     string destination = Uri.UnescapeDataString(response.RequestMessage.RequestUri.Query.Substring(6));
                     string subName = destination.Substring(destination.LastIndexOf("/r/"));
-                    return new SubReddit($"{subName.Substring(0, subName.Length - 1)} (NSFW)", destination);
+                    subReddit = new SubReddit($"{subName.Substring(0, subName.Length - 1)} (NSFW)", destination);
                 }
-                return new SubReddit(response.RequestMessage.RequestUri);
+                else
+                {
+                    subReddit = new SubReddit(response.RequestMessage.RequestUri);
+                }
+                if (SubReddits.Any(x => x.Name.Equals(subReddit.Name)))
+                {
+                    Debug.WriteLine($"Duplicate Subreddit found: {subReddit.Name}");
+                    return await GetRandomSubRedditAsync(retries);
+                }
+                return subReddit;
             }
             catch (Exception exception)
             {
