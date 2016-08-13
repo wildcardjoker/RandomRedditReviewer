@@ -25,3 +25,4 @@ Credits
 * Application themed using [MahApps](http://mahapps.com/)
 * Enum to Human-readable Description using [Humanizer](https://github.com/Humanizr/Humanizer)
 * Data Binding support via [MVVM Light](http://www.mvvmlight.net/)
+* Reddit icon courtesy of [Wikimedia  Commons](https://commons.wikimedia.org/wiki/File:Reddit.svg)
