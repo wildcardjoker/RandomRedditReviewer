@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Component 
+    Id="HumanizerDll" 
+    Guid="{3FAFEF64-5259-4464-B623-4C0878DBF046}"
+    Directory="INSTALLFOLDER" >
+    <File Id="HumanizerDll" Name="Humanizer.dll" Source="$(var.SolutionDir)Packages\Humanizer.Core.2.1.0\lib\netstandard1.0\Humanizer.dll" KeyPath="yes"/>
+  </Component>
+</Include>

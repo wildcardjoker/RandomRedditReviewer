@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+  <Component
+    Id="MainExecutable"
+    Guid="{F071C789-CE55-4FCD-9898-F760B4E64170}"
+    Directory="INSTALLFOLDER">
+    <File Id="RRRexe" Name="$(var.RandomRedditReviewer.TargetFileName)" Source="$(var.RandomRedditReviewer.TargetPath)"
+          KeyPath="yes">
+      <?include ShortcutStartMenu.wxi?>
+      <?include ShortcutDesktop.wxi?>
+    </File>
+  </Component>
+</Include>

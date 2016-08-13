@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Component 
+    Id="InstructionsTxt" 
+    Guid="{CB646BD7-6AFF-402F-B415-272FF4AE750C}"
+    Directory="INSTALLFOLDER" >
+    <File Id="InstructionsText" Name="Instructions.txt" Source="$(var.RandomRedditReviewer.ProjectDir)Instructions.txt" KeyPath="yes"/>
+  </Component>
+</Include>

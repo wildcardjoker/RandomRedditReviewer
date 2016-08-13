@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Component 
+    Id="MahAppsinteractivity" 
+    Guid="{70376C7E-7C8F-4BDB-93D3-883F28ADE7FD}"
+    Directory="INSTALLFOLDER" >
+    <File Id="MahAppsinteractivity" Name="System.Windows.Interactivity.dll" Source="$(var.SolutionDir)Packages\MahApps.Metro.1.3.0-ALPHA185\lib\net45\System.Windows.Interactivity.dll" KeyPath="yes"/>
+  </Component>
+</Include>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+  <Component
+    Id="SubRedditViewModelDll"
+    Guid="{DD9C4C78-2E4A-4CBB-AC5F-C87A5076358D}"
+    Directory="INSTALLFOLDER">
+    <File Id="SubRedditViewModelDll" 
+          Name="$(var.SubRedditViewModel.TargetFileName)" 
+          Source="$(var.SubRedditViewModel.TargetPath)"
+          KeyPath="yes">
+    </File>
+  </Component>
+</Include>

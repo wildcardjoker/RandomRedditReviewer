@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+  <Component
+    Id="SubRedditDll"
+    Guid="{34C37281-E825-40F5-A4FC-448302A83BBE}"
+    Directory="INSTALLFOLDER">
+    <File Id="SubRedditDll" Name="$(var.SubReddit.TargetFileName)" Source="$(var.SubReddit.TargetPath)"
+          KeyPath="yes">
+    </File>
+  </Component>
+</Include>

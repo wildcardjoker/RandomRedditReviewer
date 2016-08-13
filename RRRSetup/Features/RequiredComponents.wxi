@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Feature
+    Id="RequiredComponents" 
+    Title="Random Reddit Reviewer" 
+    Level="1">
+    <ComponentGroupRef Id="RRRGroup"/>
+    <ComponentGroupRef Id="SubReddit"/>
+    <ComponentGroupRef Id="SubRedditViewModel"/>
+    <ComponentRef Id="ProgramMenuDir"/>
+  </Feature>
+</Include>

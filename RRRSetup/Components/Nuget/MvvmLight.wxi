@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Component 
+    Id="MvvmLightDll" 
+    Guid="{369C37D7-E949-42A9-A107-8327683485F7}"
+    Directory="INSTALLFOLDER" >
+    <File Id="MvvmLightDll" Name="GalaSoft.MvvmLight.dll" Source="$(var.SolutionDir)Packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll" KeyPath="yes"/>
+  </Component>
+</Include>

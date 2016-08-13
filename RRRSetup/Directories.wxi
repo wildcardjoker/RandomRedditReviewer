@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Set up folder hierarchy -->
+  <Directory Id="TARGETDIR" Name="SourceDir">
+    <Directory Id="ProgramFilesFolder">
+      <Directory Id="ManufacturerFolder" Name="WildCardJoker">
+        <Directory Id="INSTALLFOLDER" Name="Random Reddit Reviewer" />
+      </Directory>
+    </Directory>
+    <!-- Shortcut directories -->
+    <Directory Id="ProgramMenuFolder" Name="ProgramFiles">
+      <!-- Start Menu folder -->
+      <Directory Id="ProgramMenuDir" Name="Random Reddit Reviewer">
+        <!-- Remove this folder if the application is removed -->
+        <Component Id="ProgramMenuDir" Guid="{4FE748D1-F8C2-4A0B-954F-8759C36C32E5}">
+          <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </Directory>
+    <!-- Desktop shortcut -->
+    <Directory Id="DesktopFolder" Name="Desktop" />
+  </Directory>
+</Include>

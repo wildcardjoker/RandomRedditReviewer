@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	<Shortcut 
+    Id="RRRDesktopShortcut" 
+    Directory="DesktopFolder" 
+    Name="Random Reddit Reviewer" 
+    Icon="ApplicationIcon.exe" 
+    IconIndex="0" 
+    Advertise="yes" />
+</Include>

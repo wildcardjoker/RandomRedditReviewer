@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+  <DirectoryRef Id="ProgramMenuDir" />
+  <ComponentGroup Id="RRRGroup">
+    <?include RandomRedditReviewer\MainExecutable.wxi?>
+    <?include RandomRedditReviewer\Instructions.wxi?>
+    <?include ..\Nuget\Bundles\MahAppsMetroBundle.wxi?>
+    <?include ..\Nuget\Humanizer.wxi?>
+  </ComponentGroup>
+</Include>

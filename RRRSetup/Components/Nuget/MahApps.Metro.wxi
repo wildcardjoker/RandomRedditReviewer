@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Component 
+    Id="MahAppsMetroDll" 
+    Guid="{6904B5C9-B945-47FB-B55E-D42A192CBDB2}"
+    Directory="INSTALLFOLDER" >
+    <File Id="MahAppsMetroDll" Name="MahApps.Metro.dll" Source="$(var.SolutionDir)Packages\MahApps.Metro.1.3.0-ALPHA185\lib\net45\MahApps.Metro.dll" KeyPath="yes"/>
+  </Component>
+</Include>
