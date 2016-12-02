@@ -5,6 +5,12 @@ About
 -----
 A small application I created to poll reddit.com/r/random and, optionally, reddit.com/r/randnsfw.
 
+Installation
+------------
+You will find binaries on the [releases](https://github.com/wildcardjoker/RandomRedditReviewer/releases) page:
+* An installer (MSI) - this is the recommended version. Download and double-click `RRRSetup.msi`
+* ZIP file - a portable version. Simply unzip and run the `RandomRedditReviewer.exe` file. 
+
 Instructions
 ------------
 1. Select the number of random subreddits to poll.
