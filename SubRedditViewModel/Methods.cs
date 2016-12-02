@@ -87,6 +87,8 @@ namespace Wcj
         {
             SubReddits.Clear();
             SubRedditCount = 0;
+            Status = "Processing";
+
             for (int i = 0; i < SubRedditsToGet; i++)
             {
                 SubReddit subReddit = await Task.Run(() => GetRandomSubRedditAsync());
